@@ -39,7 +39,7 @@ The SPL token address is:
 NFT repo github link 
 
 
-[Solana NFT](https://github.com/ethParth/Sol_Beg_Mod_2_NFT)
+[Solana NFT](https://github.com/ethParth/Sol_Beg_Mod_3_NFT)
 
 ### Author
 
