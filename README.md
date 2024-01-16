@@ -27,7 +27,7 @@ This will run the index.js script to create a new KeyPair and Airdrop some SOL t
 This is the link for solscan, where you can find all the addresses:
 
 
-https://explorer.solana.com/?cluster=devnet
+[SolScan](https://explorer.solana.com/?cluster=devnet)
 
 
 The SPL token address is:
