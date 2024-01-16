@@ -22,16 +22,16 @@ import {
     // const fromWallet = Keypair.generate();
     // const toWallet = Keypair.generate();
 
-    // const fromWallet = newKey();
+    const fromWallet = newKey();
 
-    const PRIVATE = new Uint8Array([
-        22, 85, 155, 218, 55, 196, 141, 96, 133, 17, 250, 56, 204, 233, 161, 46,
-        175, 108, 109, 32, 72, 33, 190, 21, 107, 10, 205, 113, 42, 73, 23, 182,
-        214, 25, 229, 129, 33, 167, 251, 236, 91, 164, 31, 68, 233, 68, 7, 133,
-        74, 30, 89, 32, 162, 18, 138, 177, 114, 234, 133, 237, 205, 119, 35, 212,
-      ]);
+    // const PRIVATE = new Uint8Array([
+    //     22, 85, 155, 218, 55, 196, 141, 96, #, 17, 250, 56, 204, 233, 161, 46,
+    //     175, 108, 109, 32, 72, 33, 190, 21, 107, 10, ###, 113, 42, #, 23, 182,
+    //     214, 25, 229, 129, 33, ##, 251, 236, 91, 164, 31, 68, 233, 68, 7, 133,
+    //     74, 30, 89, 32, 162, 18, 138, ##, 114, 234, ##, 237, 205, 119, 35, 212,
+    //   ]);
   
-      const fromWallet = Keypair.fromSecretKey(PRIVATE);
+    //   const fromWallet = Keypair.fromSecretKey(PRIVATE);
 
     const toWallet = new PublicKey('AhaqZkm3CBJW8Fr2jxjWXa1bmueTyUaBF9GpRrWPzHdt');
     console.log("------------------------------------------------------------")
@@ -42,17 +42,17 @@ import {
 
   
     // Step 2: Airdrop SOL into your from wallet
-    // const fromAirdropSignature = await connection.requestAirdrop(
-    //   fromWallet.publicKey,
-    //   LAMPORTS_PER_SOL
-    // );
-    // // Wait for airdrop confirmation
-    // await connection.confirmTransaction(fromAirdropSignature, {
-    //   commitment: "confirmed",
-    // });
+    const fromAirdropSignature = await connection.requestAirdrop(
+      fromWallet.publicKey,
+      LAMPORTS_PER_SOL
+    );
+    // Wait for airdrop confirmation
+    await connection.confirmTransaction(fromAirdropSignature, {
+      commitment: "confirmed",
+    });
   
     // Step 3: Create new token mint and get the token account of the fromWallet address
-    //If the token account does not exist, create it
+    // If the token account does not exist, create it
 
     console.log("Starting the mint function")
     const mint = await createMint(
